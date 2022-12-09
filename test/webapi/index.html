@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件测试</title>
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script>
+
+
+        function upload() {
+            var form = new FormData();
+          //  form.append("category_id", "5847DAA7F53B7540BC88DB90BD0982E6");
+          form.append("device_name", "5847DAA7F53B7540BC88DB90BD0982E6");
+          form.append("device_code", "5847DAA7F53B7540BC88DB90BD0982E6");
+          form.append("detail_info", "5847DAA7F53B7540BC88DB90BD0982E6");
+          form.append("pic", "5847DAA7F53B7540BC88DB90BD0982E6");
+          form.append("ex_name", "5847DAA7F53B7540BC88DB90BD0982E6");
+          form.append("files", fileInput.files[0]);
+          // form.append("file2", fileInput.files[0]);
+            $.ajax({
+                "url": "http://192.168.0.211:80/api/33010801001/ex/info/add",
+                //"url": "http://localhost:8090/33010801001/ex/info/add",
+                //"url": "http://localhost:8088/upload",
+                "method": "POST",
+                "timeout": 0,
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+                "data": form,
+                "dataType": "JSON"
+            }).done(function (response) {
+                console.log(response);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="file" id="fileInput" /></form>
+    <button onclick="upload()">111</button>
+</body>
+
+</html>

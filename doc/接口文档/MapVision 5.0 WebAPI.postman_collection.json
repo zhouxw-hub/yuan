@@ -1,0 +1,3311 @@
+{
+	"info": {
+		"_postman_id": "5276901e-e3cf-4ac4-88b2-3da53d5a05ed",
+		"name": "MapVision 5.0 WebAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sys",
+			"item": [
+				{
+					"name": "sys_authorize",
+					"item": [
+						{
+							"name": "验证机器码",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/authorize/machine",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"authorize",
+										"machine"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "验证数据licence",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/authorize/licence",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"authorize",
+										"licence"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "sys_config",
+					"item": [
+						{
+							"name": "获取平台是否免密登录",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/config/isLogin",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"config",
+										"isLogin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取平台是否独立运行",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/config/isStand",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"config",
+										"isStand"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取平台配置状态",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/config/isConfig",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"config",
+										"isConfig"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取平台配置",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/config",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"config"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改专业配置",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data_server_uri",
+											"value": "http://192.168.0.211/mapdata",
+											"type": "text"
+										},
+										{
+											"key": "data_type",
+											"value": "normal",
+											"type": "text"
+										},
+										{
+											"key": "is_stand",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "is_login",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/config/updatePro",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"config",
+										"updatePro"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改基础配置",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sys_name\": \"图为视三维安防平台\",\r\n    \"center_location\": {\r\n        \"x\": 120.138152,\r\n        \"y\": 30.177381,\r\n        \"z\": 141,\r\n        \"heading\": 90,\r\n        \"roll\": 0,\r\n        \"pitch\": 0\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/config/updateBase",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"config",
+										"updateBase"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "sys_user",
+					"item": [
+						{
+							"name": "用户验证",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_name",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "user_pwd",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/user/login",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "默认用户",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/sys/user/defaultUser",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"sys",
+										"user",
+										"defaultUser"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "map",
+			"item": [
+				{
+					"name": "map_model",
+					"item": [
+						{
+							"name": "获取地图模型列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data_type",
+											"value": "normal",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/model/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"model",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "map_build",
+					"item": [
+						{
+							"name": "获取建筑信息",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "8bec0fd8d1ea4c36bc16bcdfcb35f3fa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/build",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"build"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取建筑列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/build/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"build",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改建筑信息",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"8bec0fd8d1ea4c36bc16bcdfcb35f3fa\",\r\n    \"build_name\": \"1\",\r\n    \"center_position\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5,\r\n        \"heading\": 85.2,\r\n        \"pitch\": -11.8,\r\n        \"roll\": 0.2\r\n    },\r\n    \"label_position\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5,\r\n        \"heading\": 85.2,\r\n        \"pitch\": -11.8,\r\n        \"roll\": 0.2\r\n    },\r\n    \"remark\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/build/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"build",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "map_floor",
+					"item": [
+						{
+							"name": "获取建筑楼层信息",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "b02cc748cb5a4bacb88f90e89f08fbf4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/floor",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"floor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取建筑楼层列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "build_id",
+											"value": "8bec0fd8d1ea4c36bc16bcdfcb35f3fa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/floor/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"floor",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改建筑楼层信息",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"b02cc748cb5a4bacb88f90e89f08fbf4\",\r\n    \"floor_name\": \"1F\",\r\n    \"center_position\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5,\r\n        \"heading\": 85.2,\r\n        \"pitch\": -11.8,\r\n        \"roll\": 0.2\r\n    },\r\n    \"is_underground\": true,\r\n    \"rise_height\": 10,\r\n    \"remark\": \"1F\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/floor/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"floor",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "map_location",
+					"item": [
+						{
+							"name": "获取常用位置列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "041135CECEB145E59D3973807FB20827",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/location/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"location",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加常用位置",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"location_name\": \"图书馆\",\r\n    \"pic\": \"data:image/png;base64\",\r\n    \"position\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5,\r\n        \"heading\": 85.2,\r\n        \"pitch\": -11.8,\r\n        \"roll\": 0.2\r\n    },\r\n    \"user_id\": \"041135CECEB145E59D3973807FB20827\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/location/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"location",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改常用位置",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"F68ED284B79A8B419E89A99B8FAA6ECC\",\r\n    \"pic\": \"data:image/png;base64\",\r\n    \"position\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.115,\r\n        \"heading\": 85.2,\r\n        \"pitch\": -11.8,\r\n        \"roll\": 0.2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/location/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"location",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除常用位置",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "F68ED284B79A8B419E89A99B8FAA6ECC",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/location/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"location",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "map_label",
+					"item": [
+						{
+							"name": "获取地图标注",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "0DCE04C867DBE74076296D264DD28859",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/label",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"label"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取地图标注列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/label/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"label",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加地图标注",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"label_name\": \"图书馆\",\r\n    \"center_position\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5,\r\n        \"heading\": 85.2,\r\n        \"pitch\": -11.8,\r\n        \"roll\": 0.2\r\n    },\r\n    \"label_position\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5\r\n    },\r\n    \"label_style\": {\r\n        \"color\": \"red\",\r\n        \"size\": 15\r\n    },\r\n    \"remark\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/label/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"label",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改地图标注",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6C894A4F96BE5D4ED10A1A2DF72EF5EA\",\r\n    \"label_name\": \"图书馆\",\r\n    \"center_position\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5,\r\n        \"heading\": 85.2,\r\n        \"pitch\": -11.8,\r\n        \"roll\": 0.2\r\n    },\r\n    \"label_position\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5\r\n    },\r\n    \"label_style\": {\r\n        \"color\": \"red\",\r\n        \"size\": 15\r\n    },\r\n    \"remark\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/label/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"label",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除地图标注",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "6C894A4F96BE5D4ED10A1A2DF72EF5EA",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/label/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"label",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "map_group",
+					"item": [
+						{
+							"name": "获取图层分组列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/group/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"group",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加图层分组",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "group_name",
+											"value": "门岗",
+											"type": "text"
+										},
+										{
+											"key": "group_icon",
+											"value": "data:image/png;base64",
+											"type": "text"
+										},
+										{
+											"key": "remark",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/group/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"group",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改图层分组",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "A8C0630C9F7CB04E4E49BF0D2002F10B",
+											"type": "text"
+										},
+										{
+											"key": "group_name",
+											"value": "门岗11",
+											"type": "text"
+										},
+										{
+											"key": "group_icon",
+											"value": "data:image/png;base64",
+											"type": "text"
+										},
+										{
+											"key": "remark",
+											"value": "21",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/group/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"group",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除图层分组",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "068A1B75D57C64478B28255671E8CA7D",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/group/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"group",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "map_layer",
+					"item": [
+						{
+							"name": "获取图层对象",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "41F0C95B1B66814462089AA8AB1907BB",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/layer",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"layer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取图层对象列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "group_id",
+											"value": "2AE9500435634E446089A74814A7EE88",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/layer/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"layer",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加图层对象",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"layer_name\": \"测试\",\r\n    \"group_id\": \"2AE9500435634E446089A74814A7EE88\",\r\n    \"layer_type\": \"polyline\",\r\n    \"options\": {\r\n        \"width\": 10,\r\n        \"color\": 1\r\n    },\r\n    \"remark\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/layer/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"layer",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改图层对象",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": \"FACB9AEBD1AA9D4776A9D171891ECEAE\",\r\n        \"layer_name\": \"测试11\",\r\n        \"group_id\": \"2AE9500435634E446089A74814A7EE88\",\r\n        \"layer_type\": \"polyline\",\r\n        \"options\": {\r\n            \"width\": 10,\r\n            \"color\": 1\r\n        },\r\n        \"remark\": \"\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/layer/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"layer",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除图层对象",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "FACB9AEBD1AA9D4776A9D171891ECEAE",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/layer/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"layer",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "map_modify",
+					"item": [
+						{
+							"name": "获取地形开挖列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/modify/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"modify",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加地形开挖",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"modify_name\": \"园区地下\",\r\n    \"options\": {\r\n        \"height\": 10,\r\n        \"position\": []\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/modify/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"modify",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改地形开挖",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"56A748A3673CEE4BD62972C4BBA8C534\",\r\n    \"modify_name\": \"园区地下\",\r\n    \"options\": {\r\n        \"height\": 22,\r\n        \"position\": []\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/modify/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"modify",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除地形开挖",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "56A748A3673CEE4BD62972C4BBA8C534",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/modify/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"modify",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "map_under",
+					"item": [
+						{
+							"name": "获取地下模型",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/map/under/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"map",
+										"under",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "device",
+			"item": [
+				{
+					"name": "device_category",
+					"item": [
+						{
+							"name": "获取设备类别列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "enable",
+											"value": "false",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/category/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"category",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "批量修改设备类别状态",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"id\": \"F1D09EFF1D6A69498E99DBAB5520761B\",\r\n        \"enable\": false\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/category/updateEnable",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"category",
+										"updateEnable"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加设备类别",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category_name\": \"报警11柱\",\r\n    \"category_icon\": \"data:image/png;base64\",\r\n    \"category_intent\": \"camera\",\r\n    \"enable\": true,\r\n    \"remark\": \"报警柱\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/category/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"category",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除设备类别",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "0B26128EF30DA4F8308ADFB88ADF95A6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/category/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"category",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取网格中设备的类别与数量",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "082BC4FE00502B466D7A12C211F0C498",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8090/33010801001/device/category/categoryByGrid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"33010801001",
+										"device",
+										"category",
+										"categoryByGrid"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "device_type",
+					"item": [
+						{
+							"name": "添加设备类型",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type_name\": \"大华报警柱\",\n    \"type_icon\": \"data:image/png;base64\",\n    \"category_id\": \"2A99EBDC1DD601484099075748CFBA2F\",\n    \"map_icon\": \"data:image/png;base64\",\n    \"enable\": false,\n    \"map_type\": \"model\",\n    \"map_style\": {\n        \"utl\": \"$serverURL$/gltf/qiangji.gltf\",\n        \"height\": 3,\n        \"scale\": 2\n    },\n    \"remark\": \"大华报警柱\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/type/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"type",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取设备类型列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category_id",
+											"value": "075312EEE50AEC448DC83B1DF1D7604F",
+											"type": "text"
+										},
+										{
+											"key": "enable",
+											"value": "true",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/type/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"type",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取设备类型",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "C558BB51014D514D2FC85F77ED9D49D2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/type",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改设备类型",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"C558BB51014D514D2FC85F77ED9D49D2\",\r\n    \"type_name\": \"人111111脸\",\r\n    \"type_icon\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABdCAYAAACmaUiBAAAACXBIWXMAAC4jAAAuIwF4pT92AAAGfmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTAyLTIwVDEwOjQ1OjU4KzA4OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTAyLTIwVDEwOjQ1OjU4KzA4OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wMi0yMFQxMDo0NTo1OCswODowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4OGUyYjA4OC01ZWM3LTNkNDgtOWY5Yy1jMjI4OTA0MjU1NGEiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo5OWQ2ZDFlOS0xMjQxLWJkNDEtODljNS0wMDlkNGY0MzcwOGQiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxNmJjMGY5ZC1lMWMyLTg5NDItYjUwMS02YzZhNzVlYWMyMzkiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjE2YmMwZjlkLWUxYzItODk0Mi1iNTAxLTZjNmE3NWVhYzIzOSIgc3RFdnQ6d2hlbj0iMjAyMC0wMi0yMFQxMDo0NTo1OCswODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo4OGUyYjA4OC01ZWM3LTNkNDgtOWY5Yy1jMjI4OTA0MjU1NGEiIHN0RXZ0OndoZW49IjIwMjAtMDItMjBUMTA6NDU6NTgrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+MTAwRTVFQzI3OTIyRDI3NzExQUE4NDRBQkY0NUREMEU8L3JkZjpsaT4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5TJopIAAAebUlEQVR4nO19eXhV1b32u+dzzj5TDknIxJQQAkFKIFCIAkJAQqAEPlvb64h20Ipw1Vb87ufjV9pbxdrB8qmFUqerVfQS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\",\r\n    \"category_id\": \"075312EEE50AEC448DC83B1DF1D7604F\",\r\n    \"map_icon\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABdCAYAAACmaUiBAAAACXBIWXMAAC4jAAAuIwF4pT92AAAGfmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTAyLTIwVDEwOjQ1OjU4KzA4OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTAyLTIwVDEwOjQ1OjU4KzA4OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wMi0yMFQxMDo0NTo1OCswODowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4OGUyYjA4OC01ZWM3LTNkNDgtOWY5Yy1jMjI4OTA0MjU1NGEiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo5OWQ2ZDFlOS0xMjQxLWJkNDEtODljNS0wMDlkNGY0MzcwOGQiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxNmJjMGY5ZC1lMWMyLTg5NDItYjUwMS02YzZhNzVlYWMyMzkiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjE2YmMwZjlkLWUxYzItODk0Mi1iNTAxLTZjNmE3NWVhYzIzOSIgc3RFdnQ6d2hlbj0iMjAyMC0wMi0yMFQxMDo0NTo1OCswODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo4OGUyYjA4OC01ZWM3LTNkNDgtOWY5Yy1jMjI4OTA0MjU1NGEiIHN0RXZ0OndoZW49IjIwMjAtMDItMjBUMTA6NDU6NTgrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+MTAwRTVFQzI3OTIyRDI3NzExQUE4NDRBQkY0NUREMEU8L3JkZjpsaT4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5TJopIAAAebUlEQVR4nO19eXhV1b32u+dzzj5TDknIxJQQAkFKIFCIAkJAQqAEPlvb64h20Ipw1Vb87ufjV9pbxdrB8qmFUqerVfQS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\",\r\n    \"map_type\": \"model\",\r\n    \"map_style\": {\r\n        \"utl\": \"$serverURL$/gltf/qiangji.gltf\",\r\n        \"height\": 3,\r\n        \"scale\": 2\r\n    },\r\n    \"enable\": false,\r\n    \"remark\": \"人脸\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/type/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"type",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "批量修改设备类型状态",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"id\": \"2FE9614770F3EC45C289A17F7B8A148A\",\r\n        \"enable\": true\r\n    },\r\n    {\r\n        \"id\": \"1F27E1EC93AF0B4268FA6BDDB11FECAB\",\r\n        \"enable\": false\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/type/updateEnable",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"type",
+										"updateEnable"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除设备类型",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1F27E1EC93AF0B4268FA6BDDB11FECAB",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/type/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"type",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "device_region",
+					"item": [
+						{
+							"name": "上传设备组织结构",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category_id",
+											"value": "19242F0F746DDE464239EF7ECE11E63F",
+											"type": "text"
+										},
+										{
+											"key": "device_region",
+											"type": "file",
+											"src": "/C:/Users/PC-2019/Desktop/东方通信园区设备组织机构.xlsx"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/region/upload",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"region",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取设备组织结构列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category_id",
+											"value": "DF88ADF95A30DA4F8308AB0B261286EF",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/region/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"region",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改设备组织结构",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "8B99A1F0B71565CA731079285D42BE4A",
+											"type": "text"
+										},
+										{
+											"key": "region_name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "pid",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/region/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"region",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加设备组织结构",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "region_name",
+											"value": "四号楼",
+											"type": "text"
+										},
+										{
+											"key": "pid",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "1331",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/region/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"region",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除设备组织结构",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "8B99A1F0B71565CA731079285D42BE4A",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/region/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"region",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "device_info",
+					"item": [
+						{
+							"name": "上传设备详情信息",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "device_info",
+											"type": "file",
+											"src": "/C:/Users/PC-2019/Desktop/东方通信园区设备详情信息.xlsx"
+										},
+										{
+											"key": "category_id",
+											"value": "19242F0F746DDE464239EF7ECE11E63F",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/info/upload",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"info",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "设备上图",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"b58126807ea74d50b9f8bbe66ad92afc_90AE016847993B4B971A2D7B319B3C90\",\r\n    \"type_id\": \"E8478B619600B14339A8E9DB6A575E5D\",\r\n    \"center\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5,\r\n        \"heading\": 85.2,\r\n        \"pitch\": -11.8,\r\n        \"roll\": 0.2\r\n    },\r\n    \"options\": {\r\n        \"type\": \"model\",\r\n        \"style\": {\r\n            \"url\": \"$serverURL$/gltf/qj.gltf\",\r\n            \"position\": {\r\n                \"x\": \"104.157785\",\r\n                \"y\": \"35.936438\",\r\n                \"z\": \"10.41\",\r\n                \"heading\": \"175\",\r\n                \"pitch\": 0,\r\n                \"roll\": 0\r\n            },\r\n            \"scale\": 2,\r\n            \"visible\": true\r\n        }\r\n    },\r\n    \"indoor\": true,\r\n    \"build_id\": \"61286E5A30D8AB0B2A4F830DF88ADF9F\",\r\n    \"floor_id\": \"86DF8BF8AD0826A4950DEA3B0A1F83F2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/info/onMap",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"info",
+										"onMap"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "设备下图",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"b58126807ea74d50b9f8bbe66ad92afc_90AE016847993B4B971A2D7B319B3C90\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/info/offMap",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"info",
+										"offMap"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取设备列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category_id",
+											"value": "DE5C0A51742A2C4ED4F8770F7A2DB3D4",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "type_id",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "region_id",
+											"value": "8B99A1F0B7156BE79285D425CA9A7310",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "device_name",
+											"value": "4F",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "indoor",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "build_id",
+											"value": "61286E5A30D8AB0B2A4F830DF88ADF9F",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "floor_id",
+											"value": "86DF8BF8AD0826A4950DEA3B0A1F83F2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "on_map",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8090/33010801001/device/info/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"33010801001",
+										"device",
+										"info",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改设备信息",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"507173f9a4b84518a790fe40a837cea8\", \r\n    \"device_name\": \"南大门\",\r\n    \"indoor\": true,\r\n    \"build_id\": \"08AB30DA34F820B261DF88AEFDF95A86\",\r\n    \"floor_id\": \"8AB0B260DDF8A4F12DA86EFF95A38308\",\r\n    \"center\": {\r\n        \"y\": 35.936436,\r\n        \"x\": 104.15776,\r\n        \"z\": 11.5,\r\n        \"heading\": 85.2,\r\n        \"pitch\": -11.8,\r\n        \"roll\": 0.2\r\n    },\r\n    \"options\": {\r\n        \"type\": \"model\",\r\n        \"style\": {\r\n            \"url\": \"$serverURL$/gltf/qj.gltf\",\r\n            \"position\": {\r\n                \"x\": \"104.157785\",\r\n                \"y\": \"35.936438\",\r\n                \"z\": \"10.41\",\r\n                \"heading\": \"175\",\r\n                \"pitch\": 0,\r\n                \"roll\": 0\r\n            },\r\n            \"scale\": 2,\r\n            \"visible\": true\r\n        }\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/info/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"info",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除设备详情信息",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "507173f9a4b84518a790fe40a837cea8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/info/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"info",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "根据设备类别获取设备数量",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/device/info/countForCategory",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"device",
+										"info",
+										"countForCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取网格中的设备",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "9767F7917892704FEC285B307EF1136E",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "19242F0F746DDE464239EF7ECE11E63F",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8090/33010801001/device/info/deviceByGrid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"33010801001",
+										"device",
+										"info",
+										"deviceByGrid"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "grid",
+			"item": [
+				{
+					"name": "grid_region",
+					"item": [
+						{
+							"name": "获取网格组织结构列表",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/grid/region/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"grid",
+										"region",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加网格组织结构",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "region_name",
+											"value": "室外",
+											"type": "text"
+										},
+										{
+											"key": "pid",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/grid/region/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"grid",
+										"region",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改网格组织结构",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "0A2CD6C9FECB9C424EB9D3B5FBC870F0",
+											"type": "text"
+										},
+										{
+											"key": "region_name",
+											"value": "四号楼111",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/grid/region/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"grid",
+										"region",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除网格组织结构",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "0A2CD6C9FECB9C424EB9D3B5FBC870F0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/grid/region/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"grid",
+										"region",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "重置网格节点",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "0A2CD6C9FECB9C424EB9D3B5FBC870F0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/grid/region/reset",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"grid",
+										"region",
+										"reset"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "grid_info",
+					"item": [
+						{
+							"name": "上传导入网格信息",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "region_id",
+											"value": "5F530004DDB2644E2318A909FA3C744F",
+											"type": "text"
+										},
+										{
+											"key": "shp",
+											"type": "file",
+											"src": "/D:/SHP/fenqukuai.shp"
+										},
+										{
+											"key": "dbf",
+											"type": "file",
+											"src": "/D:/SHP/fenqukuai.dbf"
+										},
+										{
+											"key": "indoor",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "build_id",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "floor_id",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "grid_style",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/grid/info/upload",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"grid",
+										"info",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取网格信息列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/grid/info/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"grid",
+										"info",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改网格信息",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"8EBD609994D0DF4B2258E5503DA3C9ED\",\r\n    \"grid_name\": \"室外区块03\",\r\n    \"grid_style\": {\r\n        \"color\": \"#ff0000\",\r\n        \"colorTransparency\": 50,\r\n        \"borderWidth\": \"10\",\r\n        \"borderColor\": \"#ffffff\",\r\n        \"borderTransparency\": 50\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/33010801001/device/category/categoryByGrid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"33010801001",
+										"device",
+										"category",
+										"categoryByGrid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "解析SHP数据",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/grid/info/analysisSHP",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"grid",
+										"info",
+										"analysisSHP"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "event_info",
+					"item": [
+						{
+							"name": "接收事件信息",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"event_id\": \"1DE461E69EF724429F0F743E12EC3F6D\",\r\n    \"event_type\": \"94A00A85F65AF04AB4B8AE08432A9A54\",\r\n    \"status\": 0,\r\n    \"start_time\": \"2020-03-23 20:54:07\",\r\n    \"stop_time\": \"2020-03-23 20:54:07\",\r\n    \"event_name\": \"3球场_区域入侵\",\r\n    \"device_code\": \"07c90ec35fb94b88b6ded3b01c9bfd04\",\r\n    \"device_name\": \"3球场\",\r\n    \"ext_info\": {\r\n        \"method\": \"OnEventNotify\",\r\n        \"params\": {\r\n            \"ability\": \"event_face_recognition\",\r\n            \"events\": [\r\n                {\r\n                    \"eventId\": \"80e51ca2-931f-4e97-ac9c-d66e751114d8\",\r\n                    \"eventType\": 1644175361,\r\n                    \"happenTime\": \"2019-08-14T20:55:09.000+08:00\",\r\n                    \"srcIndex\": \"8fb82557b587479e8013ab9279319dd6\",\r\n                    \"srcName\": \"123\",\r\n                    \"srcType\": \"facegroup\",\r\n                    \"status\": 0,\r\n                    \"timeout\": 0\r\n                }\r\n            ],\r\n            \"sendTime\": \"2019-08-14T20:55:16.000+08:00\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/event/info/accept",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"event",
+										"info",
+										"accept"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取事件信息列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "event_type",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "start_time",
+											"value": "2020-04-06 00:00:00",
+											"type": "text"
+										},
+										{
+											"key": "stop_time",
+											"value": "2020-03-26 00:00:00",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "event_level",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "event_name",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "device_category",
+											"value": "19242F0F746DDE464239EF7ECE11F",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "device_type",
+											"value": "3123321",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "device_name",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8090/33010801001/event/info/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"33010801001",
+										"event",
+										"info",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "根据设备类别获取当天报警数量",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/event/info/countTodayForCategory",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"event",
+										"info",
+										"countTodayForCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "根据天数获取报警统计",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "day",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/event/info/statisticsForDay",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"event",
+										"info",
+										"statisticsForDay"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改事件处理状态",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/event/info/updateHandle",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"event",
+										"info",
+										"updateHandle"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "event_type",
+					"item": [
+						{
+							"name": "获取事件类型列表",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category_id1",
+											"value": "1A95B980729DEA45D1DA5636FEFCF587",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/event/type/list",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"event",
+										"type",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加事件类型",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "event_name",
+											"value": "区域入侵",
+											"type": "text"
+										},
+										{
+											"key": "event_level",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "1A95B980729DEA45D1DA5636FEFCF587",
+											"type": "text"
+										},
+										{
+											"key": "push_data",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "link_info",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "alarm_event",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "write_log",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "enable",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "remark",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/event/type/add",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"event",
+										"type",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改事件类型",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "278965E54EF95D4739F8BC6A066DE35C",
+											"type": "text"
+										},
+										{
+											"key": "event_name",
+											"value": "测试事件",
+											"type": "text"
+										},
+										{
+											"key": "event_level",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "push_data",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "link_info",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "alarm_event",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "write_log",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "enable",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "remark",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/event/type/update",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"event",
+										"type",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除事件类型",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "278965E54EF95D4739F8BC6A066DE35C",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://192.168.0.211/api/33010801001/event/type/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"211"
+									],
+									"path": [
+										"api",
+										"33010801001",
+										"event",
+										"type",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "API测试",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.0.211/api/33010801001/webapi/service/test",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"211"
+					],
+					"path": [
+						"api",
+						"33010801001",
+						"webapi",
+						"service",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WebSocket测试",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.0.211/api/33010801001/openapi/service/test",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"211"
+					],
+					"path": [
+						"api",
+						"33010801001",
+						"openapi",
+						"service",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

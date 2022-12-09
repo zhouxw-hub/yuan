@@ -1,0 +1,24 @@
+{
+    "restify": {
+        "name": "MapVision_V5 WebAPI",
+        "port": 8090
+    },
+    "icc": {
+        "ip": "https://10.88.46.2/",
+        "oss_addr":"10.88.46.2:8925",
+        "loginName": "system",
+        "Password": "zyy123456",
+        "client_id": "ty",
+        "client_secret": "9b40667c-91a5-4c7b-a6ac-6be9af8f5e6a",
+        "playbackip":"http://10.88.46.2:7086/vod/device/cameraid/",   
+        "callBackMethod":"http://10.88.46.1:8082/DH/ICCFaceRequestMe",
+        "rtsp":"rtsp://10.88.46.2:9090/dss/monitor/param?"
+    },
+    "database": {
+        "dialect": "postgres",
+        "username": "postgres",
+        "password": "tyaimap",
+        "host": "10.88.46.1",
+        "port": 5432
+    }
+}

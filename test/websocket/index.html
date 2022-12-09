@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="author" content="https://www.baidu.com" />
+    <title>websocket test</title>
+    <script>
+        var socket;
+        function Connect() {
+            try {
+                socket = new WebSocket("ws://192.168.0.211:8091");
+            } catch (e) {
+                alert("error");
+                return;
+            }
+            socket.onopen = sOpen;
+            socket.onerror = sError;
+            socket.onmessage = sMessage;
+            socket.onclose = sClose;
+        }
+        function sOpen() {
+            console.log("WebSocket连接成功!");
+            //订阅消息
+            socket.send("subscribe");
+        }
+        function sError(e) {
+            alert("error " + e);
+        }
+        function sMessage(messageEvent) {
+            var data = messageEvent.data;
+            var origin = messageEvent.origin;
+            if (data === "subscribe success") {
+                console.log("消息订阅成功");
+            } else {
+                console.log("server[" + origin + "] says:" + data);
+            }
+        }
+        function sClose(e) {
+            alert("connect closed:" + e.code);
+        }
+        function Send() {
+            socket.send(document.getElementById("msg").value);
+        }
+        function Close() {
+            socket.close();
+        }  		
+    </script>
+</head>
+
+<body>
+    <div style="text-align:left">
+    </div>
+    <br>
+    <div style="text-align:left">
+        <input id="msg" type="text">
+        <button id="connect" onclick="Connect();">Connect</button>
+        <button id="send" onclick="Send();">Send</button>
+        <button id="close" onclick="Close();">Close</button>
+    </div>
+    <br>
+    <h5 style="margin:4px 0px;">Message:</h5>
+    <div id="message" style="border:solid 1px #333; padding:4px; width:400px; overflow:auto;
+         background-color:#404040; height:300px; margin-bottom:8px; font-size:14px;">
+    </div>
+</body>
+
+</html>
